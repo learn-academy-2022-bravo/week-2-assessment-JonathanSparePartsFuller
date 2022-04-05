@@ -65,12 +65,12 @@ const divBy3 = (num) => {
 // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
 
 // a) Create a test with expect statements for each of the variables provided.
-// describe("randomNouns", () => {
-//   it("returns nouns with the first letter capitalized", () => {
-//     expect(randomNouns1()).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
-//     expect(randomNouns2()).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
-//   })
-// })
+describe("randomNouns", () => {
+  it("returns nouns with the first letter capitalized", () => {
+    expect(randomNouns1()).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
+    expect(randomNouns2()).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
+  })
+})
 
 const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
 // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
@@ -82,9 +82,12 @@ const randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deducti
 // Pseudo Code:
 //Create a function with randomNouns as the name
 // the function is going to have arrays
+// Use the .join method to turn the array into a string
 // It's going to utilize the method .toUpperCase
-//
-
+// Return with the .split to change the strings back to arrays
+const arraysToStrings = (randomNouns1, randomNouns2)
+let strings = arraysToStrings.join(" , ")
+console.log(strings)
 
 // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 
@@ -112,6 +115,7 @@ const vowelTester3 = "challenges"
 // Pseudo Code:
 // Create a function
 // Use the indexOf method
+// Have it return the relevent values
 const vowelIndex = (string) => {
   return vowelTester1.indexOf("e")
   return vowelTester2.indexOf("a")
