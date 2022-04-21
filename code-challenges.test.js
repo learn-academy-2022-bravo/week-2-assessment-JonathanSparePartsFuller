@@ -80,11 +80,12 @@ const randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deducti
 
 // b) Create the function that makes the test pass.
 // Pseudo Code:
-//Create a function with randomNouns as the name
-// the function is going to have arrays
-// Use the .join method to turn the array into a string
-// It's going to utilize the method .toUpperCase
-// Return with the .split to change the strings back to arrays
+// Create a function called capitalWords with array as the param
+//  Create a variable inside the function called  upperCase
+// Use the .map method to take the strings out of the array
+// return the value and use .toUpperCase(), to upper case the first letters
+// Use .substring(1) to get the first letter of each string
+// return upperCase so the function will have an output
 
 const capitalWords = (array) => {
   let upperCase = array.map(value => {
