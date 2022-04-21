@@ -48,17 +48,16 @@ const num3 = -7
 // b) Create the function that makes the test pass.
 // Pseudo Code:
 // Create a function called divBy3
-// Make three conditional statements
-// Have the conditionals equal a specfic number
-//return each statement with the appropriate string
+// Make a parameters called num
+// Make a conditional statement
+// Have the conditional be a modulo
+//return each statement with string interpulation
 const divBy3 = (num) => {
-  if (num === 15){
-  return "15 is divisible by three"
-} else if (num === 0) {
-  return "0 is divisible by three"
-} else {
-  return "-7 is not divisible by three"
-}
+  if (num % 3 === 0){
+    return `${num} is divisible by three`
+  } else {
+    return `${num} is not divisible by three`
+  }
 }
 
 
@@ -67,8 +66,8 @@ const divBy3 = (num) => {
 // a) Create a test with expect statements for each of the variables provided.
 describe("randomNouns", () => {
   it("returns nouns with the first letter capitalized", () => {
-    expect(randomNouns1()).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
-    expect(randomNouns2()).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
+    expect(capitalWords(randomNouns1)).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
+    expect(capitalWords(randomNouns2)).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
   })
 })
 
@@ -85,18 +84,22 @@ const randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deducti
 // Use the .join method to turn the array into a string
 // It's going to utilize the method .toUpperCase
 // Return with the .split to change the strings back to arrays
-const arraysToStrings = (randomNouns1, randomNouns2)
-let strings = arraysToStrings.join(" , ")
-console.log(strings)
+
+const capitalWords = (array) => {
+  let upperCase = array.map(value => {
+    return value[0].toUpperCase() + value.substring(1)
+  })
+  return upperCase
+}
 
 // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 
 // a) Create a test with expect statements for each of the variables provided.
 describe("vowelIndex", () => {
   it("returns index of the first vowel in a string", () => {
-    expect(vowelIndex("learn")).toEqual(1)
-    expect(vowelIndex("academy")).toEqual(0)
-    expect(vowelIndex("challenges")).toEqual(2)
+    expect(firstVowel("learn")).toEqual(1)
+    expect(firstVowel("academy")).toEqual(0)
+    expect(firstVowel("challenges")).toEqual(2)
   })
 })
 // ● vowelIndex › returns index of the first vowel in a string
@@ -113,11 +116,25 @@ const vowelTester3 = "challenges"
 
 // b) Create the function that makes the test pass.
 // Pseudo Code:
-// Create a function
-// Use the indexOf method
-// Have it return the relevent values
-const vowelIndex = (string) => {
-  return vowelTester1.indexOf("e")
-  return vowelTester2.indexOf("a")
-  return vowelTester3.indexOf("a")
+// Create a function called firstVowel
+// Use the indexOf method (Didn't work)
+// Have it return the relevent values (Didn't work)
+// Create a iteration for the strings to run through
+// Using the || operators to get through each vowel
+
+const firstVowel = (string) => {
+  for (i=0; i < string.length; i++) {
+    if (string[i] == 'a' || string[i] == 'e' || string[i] == 'i' || string[i] == 'o' || string[i] == 'u')
+    return string.indexOf(string[i])
+  }
 }
+
+
+
+
+
+// const firstVowel = (string) => {
+//   return vowelTester1.indexOf("e")
+//   return vowelTester2.indexOf("a")
+//   return vowelTester3.indexOf("a")
+// }
