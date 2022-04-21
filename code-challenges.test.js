@@ -70,6 +70,7 @@ describe("randomNouns", () => {
     expect(capitalWords(randomNouns2)).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
   })
 })
+// ReferenceError: randomNouns is not defined
 
 const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
 // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
@@ -124,7 +125,7 @@ const vowelTester3 = "challenges"
 
 const firstVowel = (string) => {
   for (i=0; i < string.length; i++) {
-    if (string[i] == 'a' || string[i] == 'e' || string[i] == 'i' || string[i] == 'o' || string[i] == 'u')
+    if (string[i] === 'a' || string[i] === 'e' || string[i] === 'i' || string[i] === 'o' || string[i] === 'u')
     return string.indexOf(string[i])
   }
 }
